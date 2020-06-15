@@ -22,5 +22,9 @@ public class Playstack {
 		}
 		
 	}
+	
+	public Card peek() {
+		return playstack.peek();
+	}
 
 }
