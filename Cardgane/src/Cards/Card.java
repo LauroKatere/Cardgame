@@ -17,5 +17,14 @@ public class Card {
 		number= Number;
 		colour = Colour;
 	}
+	
+	public int getnumber() {
+		return number;
+	}
+	
+	public String getcolour() {
+		return colour;
+	}
+	
 
 }
