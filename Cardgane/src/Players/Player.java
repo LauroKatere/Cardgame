@@ -1,6 +1,7 @@
 package Players;
 
 import java.util.LinkedList;
+import java.util.Scanner;
 
 import Cards.*;
 
@@ -23,7 +24,7 @@ public class Player {
 	public void playcard(Playstack playstack, Deck deck) {
 		int x = hand.size();
 		System.out.println("Card on the stack :" + playstack.peek().getnumber() + " " + playstack.peek().getcolour());
-		System.out.println("Your cards are:");
+		System.out.println(name +" your cards are:");
 		for(int z = 0; z<x ; z++) {
 			System.out.println(hand.get(z).getnumber() + hand.get(z).getcolour());
 			System.out.println();
@@ -31,7 +32,9 @@ public class Player {
 		
 		System.out.println("Either type the card you want to play or type 'draw' to draw a card.");
 		
-		String play = new String(System.in.toString());
+		@SuppressWarnings("resource")
+		Scanner play1 = new Scanner(System.in);
+		String play = play1.next();
 		
 		if(play.contains("draw")) {
 			
@@ -52,16 +55,15 @@ public class Player {
 				}	
 				
 			}
-			else {
-				System.out.println("Please choose a card that's on your hand. Or draw one.");
-				this.playcard(playstack, deck);
-			}
+			
 			
 		}
+		System.out.println("Please choose a card that's on your hand. Or draw one.");
+		this.playcard(playstack, deck);
 		
 	}
 
-	private void drawcard(Deck deck) {
+	public void drawcard(Deck deck) {
 		hand.add(deck.poll());
 		
 	}

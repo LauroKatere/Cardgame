@@ -10,6 +10,10 @@ public class Playstack {
 		
 	}
 	
+	public void addfirstcard(Deck deck) {
+		playstack.add(deck.poll());
+	}
+	
 	public boolean add(Card playcard) {
 		Card first = new Card();
 		first = playstack.peek();
