@@ -67,4 +67,8 @@ public class Player {
 		hand.add(deck.poll());
 		
 	}
+	
+	public boolean handsiEmpty() {
+		return hand.isEmpty();
+	}
 }

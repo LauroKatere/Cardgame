@@ -23,4 +23,8 @@ public class Deck {
 		}
 	}
 	
+	public int size() {
+		return Deck.size();
+	}
+	
 }

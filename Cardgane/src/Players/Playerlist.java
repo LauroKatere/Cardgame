@@ -29,6 +29,17 @@ public class Playerlist {
 		else {
 			activePlayer = 0;
 		}
-		}
+	}
+
+	public Player getactivePlayer() {
+		return round.get(activePlayer);
+	}
+	public int size() {
+		return round.size();
+	}
+	
+	public Player getPlayer(int index) {
+		return round.get(index);
+	}
 	}
 

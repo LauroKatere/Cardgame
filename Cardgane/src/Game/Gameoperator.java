@@ -1,0 +1,213 @@
+package Game;
+
+import Cards.Card;
+import Cards.Deck;
+import Cards.Playstack;
+import Players.Player;
+import Players.Playerlist;
+
+public class Gameoperator {
+	
+	Deck playdeck = new Deck();
+	Playstack playstack = new Playstack();
+	Playerlist playround = new Playerlist();
+
+	public Gameoperator(String cardgame) {
+		
+		if(cardgame.equals("Uno")) {
+			Card b0 = new Card(0, "blue");
+			Card b1 = new Card(1, "blue");
+			Card b2 = new Card(2, "blue");
+			Card b3 = new Card(3, "blue");
+			Card b4 = new Card(4, "blue");
+			Card b5 = new Card(5, "blue");
+			Card b6 = new Card(6, "blue");
+			Card b7 = new Card(7, "blue");
+			Card b8 = new Card(8, "blue");
+			Card b9 = new Card(9, "blue");
+			Card r0 = new Card(0, "red");
+			Card r1 = new Card(1, "red");
+			Card r2 = new Card(2, "red");
+			Card r3 = new Card(3, "red");
+			Card r4 = new Card(4, "red");
+			Card r5 = new Card(5, "red");
+			Card r6 = new Card(6, "red");
+			Card r7 = new Card(7, "red");
+			Card r8 = new Card(8, "red");
+			Card r9 = new Card(9, "red");
+			Card g0 = new Card(0, "green");
+			Card g1 = new Card(1, "green");
+			Card g2 = new Card(2, "green");
+			Card g3 = new Card(3, "green");
+			Card g4 = new Card(4, "green");
+			Card g5 = new Card(5, "green");
+			Card g6 = new Card(6, "green");
+			Card g7 = new Card(7, "green");
+			Card g8 = new Card(8, "green");
+			Card g9 = new Card(9, "green");
+			Card y0 = new Card(0, "yellow");
+			Card y1 = new Card(1, "yellow");
+			Card y2 = new Card(2, "yellow");
+			Card y3 = new Card(3, "yellow");
+			Card y4 = new Card(4, "yellow");
+			Card y5 = new Card(5, "yellow");
+			Card y6 = new Card(6, "yellow");
+			Card y7 = new Card(7, "yellow");
+			Card y8 = new Card(8, "yellow");
+			Card y9 = new Card(9, "yellow");
+			Card b12 = new Card(1, "blue");
+			Card b22 = new Card(2, "blue");
+			Card b32 = new Card(3, "blue");
+			Card b42 = new Card(4, "blue");
+			Card b52 = new Card(5, "blue");
+			Card b62 = new Card(6, "blue");
+			Card b72 = new Card(7, "blue");
+			Card b82 = new Card(8, "blue");
+			Card b92 = new Card(9, "blue");
+			Card r12 = new Card(1, "red");
+			Card r22 = new Card(2, "red");
+			Card r32 = new Card(3, "red");
+			Card r42 = new Card(4, "red");
+			Card r52 = new Card(5, "red");
+			Card r62 = new Card(6, "red");
+			Card r72 = new Card(7, "red");
+			Card r82 = new Card(8, "red");
+			Card r92 = new Card(9, "red");
+			Card g12 = new Card(1, "green");
+			Card g22 = new Card(2, "green");
+			Card g32 = new Card(3, "green");
+			Card g42 = new Card(4, "green");
+			Card g52 = new Card(5, "green");
+			Card g62 = new Card(6, "green");
+			Card g72 = new Card(7, "green");
+			Card g82 = new Card(8, "green");
+			Card g92 = new Card(9, "green");
+			Card y12 = new Card(1, "yellow");
+			Card y22 = new Card(2, "yellow");
+			Card y32 = new Card(3, "yellow");
+			Card y42 = new Card(4, "yellow");
+			Card y52 = new Card(5, "yellow");
+			Card y62 = new Card(6, "yellow");
+			Card y72 = new Card(7, "yellow");
+			Card y82 = new Card(8, "yellow");
+			Card y92 = new Card(9, "yellow");
+			
+			playdeck.add(b0);
+			playdeck.add(b1);
+			playdeck.add(b2);
+			playdeck.add(b3);
+			playdeck.add(b4);
+			playdeck.add(b5);
+			playdeck.add(b6);
+			playdeck.add(b7);
+			playdeck.add(b8);
+			playdeck.add(b9);
+
+			playdeck.add(b12);
+			playdeck.add(b22);
+			playdeck.add(b32);
+			playdeck.add(b42);
+			playdeck.add(b52);
+			playdeck.add(b62);
+			playdeck.add(b72);
+			playdeck.add(b82);
+			playdeck.add(b92);
+			
+			playdeck.add(r0);
+			playdeck.add(r1);
+			playdeck.add(r2);
+			playdeck.add(r3);
+			playdeck.add(r4);
+			playdeck.add(r5);
+			playdeck.add(r6);
+			playdeck.add(r7);
+			playdeck.add(r8);
+			playdeck.add(r9);
+			
+
+			playdeck.add(r12);
+			playdeck.add(r22);
+			playdeck.add(r32);
+			playdeck.add(r42);
+			playdeck.add(r52);
+			playdeck.add(r62);
+			playdeck.add(r72);
+			playdeck.add(r82);
+			playdeck.add(r92);
+			
+			playdeck.add(g0);
+			playdeck.add(g1);
+			playdeck.add(g2);
+			playdeck.add(g3);
+			playdeck.add(g4);
+			playdeck.add(g5);
+			playdeck.add(g6);
+			playdeck.add(g7);
+			playdeck.add(g8);
+			playdeck.add(g9);
+			
+
+			playdeck.add(g12);
+			playdeck.add(g22);
+			playdeck.add(g32);
+			playdeck.add(g42);
+			playdeck.add(g52);
+			playdeck.add(g62);
+			playdeck.add(g72);
+			playdeck.add(g82);
+			playdeck.add(g92);
+			
+			playdeck.add(y0);
+			playdeck.add(y1);
+			playdeck.add(y2);
+			playdeck.add(y3);
+			playdeck.add(y4);
+			playdeck.add(y5);
+			playdeck.add(y6);
+			playdeck.add(y7);
+			playdeck.add(y8);
+			playdeck.add(y9);
+			
+			playdeck.add(y12);
+			playdeck.add(y22);
+			playdeck.add(y32);
+			playdeck.add(y42);
+			playdeck.add(y52);
+			playdeck.add(y62);
+			playdeck.add(y72);
+			playdeck.add(y82);
+			playdeck.add(y92);
+			
+			playdeck.shuffel();
+			
+			playstack.addfirstcard(playdeck);
+					
+			
+		}
+		
+		
+	}
+	
+
+
+	public void addPlayertoround(Player player) {
+		playround.addPlayer(player);
+	}
+	
+	public void play() {
+		int numberofcards = (int) (playdeck.size()/playround.size());
+		if(numberofcards>5) {
+			numberofcards = 5;
+		}
+		else if (numberofcards<1) {
+			System.out.println("There are to many players to play with this normal deck. Please remove some players from the round.");
+			return;
+		}
+		
+		for (int x = 0; x<=playround.size(); x++) {
+			for(int z = 0; z<numberofcards; z++) {
+			playround.getPlayer(x).drawcard(playdeck);
+		}
+		}
+	}
+}
