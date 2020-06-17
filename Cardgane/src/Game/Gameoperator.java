@@ -218,14 +218,18 @@ public class Gameoperator {
 		Player active = new Player();
 		while(playerhand==false) {
 			active = playround.getactivePlayer();
+			System.out.println("T1");
 			active.playcard(playstack, playdeck);
 			playround.activecount();
+			 
 			if(active.handsiEmpty()) {
 				playerhand = true;
+				
 			}
 			
-			
 		}
+		
+		System.out.println("Winner is "+ active.getname());
 		
 	}
 }

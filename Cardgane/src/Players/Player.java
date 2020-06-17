@@ -71,4 +71,8 @@ public class Player {
 	public boolean handsiEmpty() {
 		return hand.isEmpty();
 	}
+	
+	public String getname() {
+		return name;
+	}
 }

@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class Playerlist {
 	
 	LinkedList<Player> round = new LinkedList<Player>();
-	int activePlayer;
+	int activePlayer = 0;
 	
 	public Playerlist() {
 		
@@ -20,10 +20,10 @@ public class Playerlist {
 	}
 	
 	public void activecount() {
-		if(activePlayer<round.size()) {
-			activePlayer++;
+		if(activePlayer<round.size()-1) {
+			activePlayer= activePlayer + 1;
 		}
-		else if (activePlayer==round.size()) {
+		else if (activePlayer==round.size()-1) {
 		activePlayer = 0;
 		}
 		else {
