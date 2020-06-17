@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 import Cards.*;
+import Game.Gameoperator;
 
 
 public class Player {
@@ -17,6 +18,15 @@ public class Player {
 
 	public Player(String Name) {
 		name = Name;
+	}
+	
+	public void createPlayer(Gameoperator game) {
+		System.out.println("Please enter the name of your player");
+		@SuppressWarnings("resource")
+		Scanner x = new Scanner(System.in);
+		String name = x.next();
+		Player player = new Player(name);
+		game.addPlayertoround(player);
 	}
 	
 	

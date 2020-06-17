@@ -188,7 +188,9 @@ public class Gameoperator {
 		
 	}
 	
-
+	public Player getLast() {
+		return playround.getLast();
+	}
 
 	public void addPlayertoround(Player player) {
 		playround.addPlayer(player);
@@ -217,6 +219,9 @@ public class Gameoperator {
 		boolean playerhand = false;
 		Player active = new Player();
 		while(playerhand==false) {
+			if(playdeck.isEmpty()) {
+				playdeck.fillDeck(playstack);
+			}
 			active = playround.getactivePlayer();
 			System.out.println("T1");
 			active.playcard(playstack, playdeck);

@@ -15,6 +15,18 @@ public class Deck {
 		return Deck.poll();
 	}
 	
+	public boolean isEmpty() {
+		return Deck.isEmpty();
+	}
+	
+	public void fillDeck(Playstack playstack) {
+		while(!playstack.isEmpty()) {
+			this.add(playstack.pop());
+		}
+		
+		this.shuffel();
+	}
+	
 	public void shuffel() {
 		int y;
 		LinkedList<Card> shuffeldeck1 = new LinkedList<Card>();

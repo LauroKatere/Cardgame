@@ -11,6 +11,10 @@ public class Playerlist {
 		
 	}
 	
+	public Player getLast() {
+		return round.getLast();
+	}
+	
 	public boolean addPlayer(Player p) {
 		return round.add(p);
 	}

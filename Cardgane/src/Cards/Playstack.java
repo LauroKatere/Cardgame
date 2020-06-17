@@ -30,5 +30,13 @@ public class Playstack {
 	public Card peek() {
 		return playstack.peek();
 	}
+	
+	public Card pop() {
+		return playstack.pop();
+	}
+	
+	public boolean isEmpty() {
+		return playstack.isEmpty();
+	}
 
 }
