@@ -4,6 +4,7 @@ public class Card {
 	
 	int number;
 	String colour;
+	boolean  wishcolour;
 	
 	public Card() {
 		this(7);
@@ -14,8 +15,13 @@ public class Card {
 	}
 	
 	public Card(int Number, String Colour) {
+		this(Number, Colour, false);
+	}
+	
+	public Card(int Number, String Colour, boolean wishcard) {
 		number= Number;
 		colour = Colour;
+		wishcolour = wishcard;
 	}
 	
 	public int getnumber() {
@@ -24,6 +30,10 @@ public class Card {
 	
 	public String getcolour() {
 		return colour;
+	}
+	
+	public boolean getwish() {
+		return wishcolour;
 	}
 	
 
