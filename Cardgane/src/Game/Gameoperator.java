@@ -195,6 +195,10 @@ public class Gameoperator {
 	}
 	
 	public void play() {
+		if(playround.size()==0) { 
+			System.out.println("Please add at least tow player to the game.");
+			return;
+		}
 		int numberofcards = (int) (playdeck.size()/playround.size());
 		if(numberofcards>5) {
 			numberofcards = 5;
@@ -204,10 +208,24 @@ public class Gameoperator {
 			return;
 		}
 		
-		for (int x = 0; x<=playround.size(); x++) {
+		for (int x = 0; x<playround.size(); x++) {
 			for(int z = 0; z<numberofcards; z++) {
 			playround.getPlayer(x).drawcard(playdeck);
 		}
 		}
+		
+		boolean playerhand = false;
+		Player active = new Player();
+		while(playerhand==false) {
+			active = playround.getactivePlayer();
+			active.playcard(playstack, playdeck);
+			playround.activecount();
+			if(active.handsiEmpty()) {
+				playerhand = true;
+			}
+			
+			
+		}
+		
 	}
 }

@@ -19,6 +19,7 @@ public class Deck {
 		for(int x=0; x<10000; x++) {
 			int z = (int) Math.random()*10;
 			e = Deck.get(z);
+			Deck.remove(z);
 			Deck.add(e);
 		}
 	}
