@@ -243,7 +243,6 @@ public class Gameoperator {
 				playdeck.fillDeck(playstack);
 			}
 			active = playround.getactivePlayer();
-			System.out.println("T1");
 			active.playcard(playstack, playdeck);
 			playround.activecount();
 			 

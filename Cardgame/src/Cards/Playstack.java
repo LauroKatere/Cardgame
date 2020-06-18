@@ -11,6 +11,7 @@ public class Playstack {
 	boolean wish = false;
 	int draw = 0;
 	String wishcolour = new String();
+	Card fanish = new Card();
 	
 	public Playstack() {
 		
@@ -20,14 +21,20 @@ public class Playstack {
 		playstack.add(deck.poll());
 	}
 	
-	public boolean add(Card playcard) {
+	public void addCard(Card card) {
+		playstack.add(card);
+	}
+	
+	public boolean playonstack(Card playcard) {
 		Card first = new Card();
 		first = playstack.peek();
-		System.out.println("amount ouf draw" + draw);
+		System.out.println("amount ouf draw " + draw);
 		
-		if(whish==true && !playcard.getwish()) {
-			if(playcard.getcolour().equals(wishcolour)) {			
+		if(wish==true && !playcard.getwish()) {
+			if(playcard.getcolour().equals(wishcolour)) {
+				playstack.pop();
 				playstack.add(playcard);
+				wish = false;
 					return true;
 				}
 				else {
@@ -35,30 +42,40 @@ public class Playstack {
 				}
 		}
 		
+		
 		if(playcard.getwish()) {
+			if(wish==true) {
+				playstack.pop();
+			}
 			System.out.println("Please type the colour you wish.");
+			@SuppressWarnings("resource")
 			Scanner x = new Scanner(System.in);
 			do {
 				wishcolour = x.next();
-				if(whishcolour.equals("blue")) {
+				if(wishcolour.equals("blue")) {
 					break;
 				}
-				else if(whishcolour.equals("red")) {
+				else if(wishcolour.equals("red")) {
 					break;
 				}
-				else if(whishcolour.equals("green")) {
+				else if(wishcolour.equals("green")) {
 					break;
 				}
-				else if(whishcolour.equals("yellow")) {
+				else if(wishcolour.equals("yellow")) {
 					break;
 				}
 				
 				System.out.println("Please enter one colour that exists.");
 				
 			}while(true);
+			fanish = new Card(0, wishcolour);
+			playstack.add(fanish);
 			
 			draw = draw + playcard.getnumber();
+			if(draw>0) {
 			draw2 = true;
+			}			
+			
 			wish = true;
 			return true;
 		}
@@ -88,6 +105,22 @@ public class Playstack {
 	
 	public boolean isEmpty() {
 		return playstack.isEmpty();
+	}
+	
+	public boolean getdraw() {
+		return draw2;
+	}
+	
+	public int getdrawamount() {
+		return draw;
+	}
+	
+	public void setdrawfalse() {
+		draw2=false;
+	}
+	
+	public void setdrawamounttozero() {
+		draw = 0;
 	}
 
 }

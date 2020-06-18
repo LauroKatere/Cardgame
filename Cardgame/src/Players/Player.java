@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 import Cards.Card;
+import Cards.Deck;
+import Cards.Playstack;
 import Game.Gameoperator;
 
 
@@ -32,6 +34,17 @@ public class Player {
 	
 	
 	public void playcard(Playstack playstack, Deck deck) {
+		
+		if(playstack.getdraw()) {
+			for(int y = 0; y<playstack.getdrawamount(); y++) {
+				this.drawcard(deck);
+				
+			}
+			System.out.println(name + "has drawn " + playstack.getdrawamount() + "cards.");
+			playstack.setdrawamounttozero();
+			playstack.setdrawfalse();
+		}
+		else {
 		int x = hand.size();
 		System.out.println("Card on the stack :" + playstack.peek().getnumber() + " " + playstack.peek().getcolour());
 		System.out.println(name +" your cards are:");
@@ -55,7 +68,7 @@ public class Player {
 		
 		for (int u = 0 ; u<x ;u++) {
 			if(play.contains(hand.get(u).getcolour()) && play.contains(Integer.toString(hand.get(u).getnumber()))) {
-				if(playstack.add(hand.get(u))) {
+				if(playstack.playonstack(hand.get(u))) {
 					hand.remove(u);
 					return;
 				}
@@ -71,6 +84,7 @@ public class Player {
 		System.out.println("Please choose a card that's on your hand. Or draw one.");
 		this.playcard(playstack, deck);
 		
+	}
 	}
 
 	public void drawcard(Deck deck) {

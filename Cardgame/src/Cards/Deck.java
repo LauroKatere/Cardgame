@@ -20,9 +20,15 @@ public class Deck {
 	}
 	
 	public void fillDeck(Playstack playstack) {
+		
+		Card e = playstack.pop();
+		
+		
 		while(!playstack.isEmpty()) {
-			this.add(playstack.pop());
+			Deck.add(playstack.pop());
 		}
+		Deck.addFirst(e);
+		playstack.addfirstcard(this);
 		
 		this.shuffel();
 	}
