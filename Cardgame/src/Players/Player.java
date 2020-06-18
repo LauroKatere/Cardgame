@@ -3,7 +3,7 @@ package Players;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import Cards.*;
+import Cards.Card;
 import Game.Gameoperator;
 
 
