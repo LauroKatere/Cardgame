@@ -23,6 +23,18 @@ public class Playstack {
 	public boolean add(Card playcard) {
 		Card first = new Card();
 		first = playstack.peek();
+		System.out.println("amount ouf draw" + draw);
+		
+		if(whish==true && !playcard.getwish()) {
+			if(playcard.getcolour().equals(wishcolour)) {			
+				playstack.add(playcard);
+					return true;
+				}
+				else {
+					return false;
+				}
+		}
+		
 		if(playcard.getwish()) {
 			System.out.println("Please type the colour you wish.");
 			Scanner x = new Scanner(System.in);
@@ -48,17 +60,10 @@ public class Playstack {
 			draw = draw + playcard.getnumber();
 			draw2 = true;
 			wish = true;
+			return true;
 		}
 		
-		if(whish==true) {
-			if(playcard.getcolour().equals(wishcolour)) {			
-				playstack.add(playcard);
-					return true;
-				}
-				else {
-					return false;
-				}
-		}
+		
 		
 		
 		
