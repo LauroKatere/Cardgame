@@ -23,7 +23,8 @@ public class Playerlist {
 		round.remove(index);
 	}
 	
-	public void activecount() {
+	public void activecount(boolean rotation) {
+		if(!rotation) {
 		if(activePlayer<round.size()-1) {
 			activePlayer= activePlayer + 1;
 		}
@@ -32,6 +33,16 @@ public class Playerlist {
 		}
 		else {
 			activePlayer = 0;
+		}
+		}
+		else {
+			if(activePlayer<round.size()-1 && activePlayer>0) {
+				activePlayer = activePlayer - 1;
+			}
+			else if (activePlayer== 0) {
+				activePlayer = round.size()-1;
+				
+			}
 		}
 	}
 

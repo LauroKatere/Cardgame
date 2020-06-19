@@ -31,7 +31,19 @@ public class Playstack {
 		System.out.println("amount ouf draw " + draw);
 		
 		if(wish==true && !playcard.getwish()) {
-			if(playcard.getcolour().equals(wishcolour)) {
+			
+			if((playcard.getcolour().contains("+") && playcard.getcolour().contains(first.getcolour())) ||(playcard.getcolour().contains("+") && playcard.getnumber()==2)) {
+				
+				draw = draw + playcard.getnumber();
+				draw2=true;
+				wish = false;
+				playstack.pop();
+				playstack.add(playcard);
+				return true;
+				
+			}
+			
+			else if(playcard.getcolour().equals(wishcolour)) {
 				playstack.pop();
 				playstack.add(playcard);
 				wish = false;
@@ -80,12 +92,19 @@ public class Playstack {
 			return true;
 		}
 		
+		if((playcard.getcolour().contains("+") && playcard.getcolour().contains(first.getcolour())) || (playcard.getcolour().contains("+") && playcard.getnumber()==2)) {
+		
+			draw = draw + playcard.getnumber();
+			draw2=true;
+			playstack.add(playcard);
+			return true;
+			
+		}
 		
 		
 		
 		
-		
-		if(playcard.getnumber() == first.getnumber() || playcard.getcolour().equals(first.getcolour())) {			
+		if(playcard.getnumber() == first.getnumber() || playcard.getcolour().contains(first.getcolour())) {			
 		playstack.add(playcard);
 			return true;
 		}

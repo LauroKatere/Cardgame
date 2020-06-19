@@ -11,6 +11,7 @@ public class Gameoperator {
 	Deck playdeck = new Deck();
 	Playstack playstack = new Playstack();
 	Playerlist playround = new Playerlist();
+	boolean rotation = false;
 
 	public Gameoperator(String cardgame) {
 		
@@ -99,6 +100,10 @@ public class Gameoperator {
 			Card w6 = new Card(4, "wish", true);
 			Card w7 = new Card(4, "wish", true);
 			Card w8 = new Card(4, "wish", true);
+			Card dr1 = new Card(2, "+red");
+			Card db1 = new Card(2, "+blue");
+			Card dg1 = new Card(2, "+green");
+			Card dy1 = new Card(2, "+yellow");
 			
 			
 			playdeck.add(w1);
@@ -110,6 +115,10 @@ public class Gameoperator {
 			playdeck.add(w7);
 			playdeck.add(w8);
 			
+			playdeck.add(dr1);
+			playdeck.add(db1);
+			playdeck.add(dg1);
+			playdeck.add(dy1);
 			
 			
 			/*playdeck.add(b0);
@@ -244,7 +253,7 @@ public class Gameoperator {
 			}
 			active = playround.getactivePlayer();
 			active.playcard(playstack, playdeck);
-			playround.activecount();
+			playround.activecount(rotation);
 			 
 			if(active.handsiEmpty()) {
 				playerhand = true;
