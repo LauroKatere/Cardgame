@@ -36,6 +36,7 @@ public class Player {
 	public void playcard(Playstack playstack, Deck deck) {
 		
 		if(playstack.getdraw()) {
+			System.out.println("T2");
 			for(int y = 0; y<playstack.getdrawamount(); y++) {
 				this.drawcard(deck);
 				
@@ -46,12 +47,26 @@ public class Player {
 		}
 		else {
 		int x = hand.size();
-		System.out.println("Card on the stack :" + playstack.peek().getnumber() + " " + playstack.peek().getcolour());
+		if(playstack.peek().getnumber()>30) {
+			if(playstack.peek().getnumber()==31) {
+				System.out.println("Card on the stack : " +  "switchrotation" + playstack.peek().getcolour());
+			}
+		}
+		else{
+		System.out.println("Card on the stack : " + playstack.peek().getnumber() + " " + playstack.peek().getcolour());
+		}
+		
 		System.out.println(name +" your cards are:");
 		for(int z = 0; z<x ; z++) {
-			System.out.println(hand.get(z).getnumber() + hand.get(z).getcolour());
-			System.out.println();
+			if(hand.get(z).getnumber()>30) {
+				if(hand.get(z).getnumber()==31) {
+					System.out.println("switchrotation"+hand.get(z).getcolour());
+				}
+				
 			}
+			else {
+			System.out.println(hand.get(z).getnumber() + hand.get(z).getcolour());
+			}}
 		
 		System.out.println("Either type the card you want to play or type 'draw' to draw a card.");
 		
@@ -65,6 +80,13 @@ public class Player {
 			return;
 			
 		}
+		
+		if(play.contains("switchrotation")) {
+			System.out.println("Testswitch");
+			play = play.replaceFirst("switchrotation", "31");
+		}
+		
+		System.out.println(play);
 		
 		for (int u = 0 ; u<x ;u++) {
 			if(play.contains(hand.get(u).getcolour()) && play.contains(Integer.toString(hand.get(u).getnumber()))) {

@@ -101,10 +101,30 @@ public class Gameoperator {
 			Card w7 = new Card(4, "wish", true);
 			Card w8 = new Card(4, "wish", true);
 			Card dr1 = new Card(2, "+red");
+			Card dr2 = new Card(2, "+red");
+			Card dr3 = new Card(2, "+red");
+			Card dr4 = new Card(2, "+red");
 			Card db1 = new Card(2, "+blue");
+			Card db2 = new Card(2, "+blue");
+			Card db3 = new Card(2, "+blue");
+			Card db4 = new Card(2, "+blue");
 			Card dg1 = new Card(2, "+green");
+			Card dg2 = new Card(2, "+green");
+			Card dg3 = new Card(2, "+green");
+			Card dg4 = new Card(2, "+green");
 			Card dy1 = new Card(2, "+yellow");
+			Card dy2 = new Card(2, "+yellow");
+			Card dy3 = new Card(2, "+yellow");
+			Card dy4 = new Card(2, "+yellow");
+			Card sr1 = new Card(31, "red");
+			Card sr2 = new Card(31, "blue");
+			Card sr3 = new Card(31, "yellow");
+			Card sr4 = new Card(31, "green");
 			
+			playdeck.add(sr1);
+			playdeck.add(sr2);
+			playdeck.add(sr3);
+			playdeck.add(sr4);
 			
 			playdeck.add(w1);
 			playdeck.add(w2);
@@ -119,6 +139,21 @@ public class Gameoperator {
 			playdeck.add(db1);
 			playdeck.add(dg1);
 			playdeck.add(dy1);
+
+			playdeck.add(dr2);
+			playdeck.add(db2);
+			playdeck.add(dg2);
+			playdeck.add(dy2);
+
+			playdeck.add(dr3);
+			playdeck.add(db3);
+			playdeck.add(dg3);
+			playdeck.add(dy3);
+
+			playdeck.add(dr4);
+			playdeck.add(db4);
+			playdeck.add(dg4);
+			playdeck.add(dy4);
 			
 			
 			/*playdeck.add(b0);
@@ -253,6 +288,7 @@ public class Gameoperator {
 			}
 			active = playround.getactivePlayer();
 			active.playcard(playstack, playdeck);
+			rotation = playstack.rotation;
 			playround.activecount(rotation);
 			 
 			if(active.handsiEmpty()) {

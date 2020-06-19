@@ -24,15 +24,18 @@ public class Playerlist {
 	}
 	
 	public void activecount(boolean rotation) {
-		if(!rotation) {
+		if(rotation==false) {
 		if(activePlayer<round.size()-1) {
+			System.out.println("T3");
 			activePlayer= activePlayer + 1;
 		}
 		else if (activePlayer==round.size()-1) {
 		activePlayer = 0;
+		System.out.println("T4");
 		}
 		else {
 			activePlayer = 0;
+			System.out.println("T5");
 		}
 		}
 		else {

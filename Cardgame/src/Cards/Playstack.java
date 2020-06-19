@@ -9,6 +9,7 @@ public class Playstack {
 	boolean actioncard = false;
 	boolean draw2 = false;
 	boolean wish = false;
+	public boolean rotation = false;
 	int draw = 0;
 	String wishcolour = new String();
 	Card fanish = new Card();
@@ -31,6 +32,18 @@ public class Playstack {
 		System.out.println("amount ouf draw " + draw);
 		
 		if(wish==true && !playcard.getwish()) {
+			
+			if(playcard.getnumber()>30) {
+				if(playcard.getnumber()==31) {
+					System.out.println("T1");
+					if(rotation==true) {
+						rotation = false;
+					}
+					else {
+						rotation = true;
+					}
+				}
+			}
 			
 			if((playcard.getcolour().contains("+") && playcard.getcolour().contains(first.getcolour())) ||(playcard.getcolour().contains("+") && playcard.getnumber()==2)) {
 				
@@ -101,11 +114,19 @@ public class Playstack {
 			
 		}
 		
-		
+			
 		
 		
 		if(playcard.getnumber() == first.getnumber() || playcard.getcolour().contains(first.getcolour())) {			
-		playstack.add(playcard);
+		
+			if(playcard.getnumber()>30) {
+				if(playcard.getnumber()==31) {
+					rotation = !rotation;
+					
+				}
+			}
+			
+			playstack.add(playcard);
 			return true;
 		}
 		else {
