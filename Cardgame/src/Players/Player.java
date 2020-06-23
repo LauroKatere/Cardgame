@@ -82,14 +82,12 @@ public class Player {
 		}
 		
 		if(play.contains("switchrotation")) {
-			System.out.println("Testswitch");
 			play = play.replaceFirst("switchrotation", "31");
 		}
 		
-		System.out.println(play);
 		
 		for (int u = 0 ; u<x ;u++) {
-			if(play.contains(hand.get(u).getcolour()) && play.contains(Integer.toString(hand.get(u).getnumber()))) {
+			if( play.contains(hand.get(u).getcolour()) && play.contains(Integer.toString(hand.get(u).getnumber()))) {
 				if(playstack.playonstack(hand.get(u))) {
 					hand.remove(u);
 					return;

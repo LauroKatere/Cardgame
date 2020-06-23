@@ -39,11 +39,13 @@ public class Playerlist {
 		}
 		}
 		else {
-			if(activePlayer<round.size()-1 && activePlayer>0) {
+			if(activePlayer<round.size() && activePlayer>0) {
 				activePlayer = activePlayer - 1;
+				System.out.println("T6");
 			}
 			else if (activePlayer== 0) {
 				activePlayer = round.size()-1;
+				System.out.println("T7");
 				
 			}
 		}

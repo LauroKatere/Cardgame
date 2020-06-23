@@ -117,7 +117,7 @@ public class Playstack {
 			
 		
 		
-		if(playcard.getnumber() == first.getnumber() || playcard.getcolour().contains(first.getcolour())) {			
+		if(playcard.getnumber() == first.getnumber() ||first.getcolour().contains(playcard.getcolour())/* playcard.getcolour().contains(first.getcolour())*/) {			
 		
 			if(playcard.getnumber()>30) {
 				if(playcard.getnumber()==31) {

@@ -16,7 +16,7 @@ public class Gameoperator {
 	public Gameoperator(String cardgame) {
 		
 		if(cardgame.equals("Uno")) {
-			/*Card b0 = new Card(0, "blue");
+			Card b0 = new Card(0, "blue");
 			Card b1 = new Card(1, "blue");
 			Card b2 = new Card(2, "blue");
 			Card b3 = new Card(3, "blue");
@@ -91,7 +91,7 @@ public class Gameoperator {
 			Card y62 = new Card(6, "yellow");
 			Card y72 = new Card(7, "yellow");
 			Card y82 = new Card(8, "yellow");
-			Card y92 = new Card(9, "yellow");*/
+			Card y92 = new Card(9, "yellow");
 			Card w1 = new Card(0, "wish", true);
 			Card w2 = new Card(0, "wish", true);
 			Card w3 = new Card(0, "wish", true);
@@ -156,7 +156,7 @@ public class Gameoperator {
 			playdeck.add(dy4);
 			
 			
-			/*playdeck.add(b0);
+			playdeck.add(b0);
 			playdeck.add(b1);
 			playdeck.add(b2);
 			playdeck.add(b3);
@@ -242,7 +242,7 @@ public class Gameoperator {
 			playdeck.add(y82);
 			playdeck.add(y92);
 			
-			playdeck.shuffel();*/
+			playdeck.shuffel();
 			
 			playstack.addfirstcard(playdeck);
 					
